@@ -1,0 +1,21 @@
+<resources>
+    <style name="TextAppearance.Custom.Default" parent="@style/TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.Custom.H1" parent="@style/TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.Custom.H2" parent="@style/TextAppearance.MaterialComponents.Headline2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.Custom.H2.Bold" parent="@style/TextAppearance.Custom.H2">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

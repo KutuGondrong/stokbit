@@ -1,0 +1,3 @@
+rootProject.name = "CryptoOnlineKG"
+include ':app'
+include ':data'

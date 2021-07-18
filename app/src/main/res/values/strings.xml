@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CryptoOnlineKG</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="welcome_message">Crypto Online KG</string>
+    <string name="could_not_be_load">Could not be load</string>
+    <string name="retry">Retry</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="atau">atau</string>
+    <string name="username_or_email">Username or Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login">Login</string>
+    <string name="login_with_fingerprint">Login with Fingerprint</string>
+    <string name="register_now">Don\'t have an account yet?  <font color='#00AB6D'>Register Now</font></string>
+    <string name="watchlist">Watchlist</string>
+    <string name="stream">Stream</string>
+    <string name="nav_title_watch_list">CryptoOnlineKG WatchList</string>
+    <string name="nav_title_stream">CryptoOnlineKG Stream</string>
+    <string name="logout">Logout</string>
+</resources>

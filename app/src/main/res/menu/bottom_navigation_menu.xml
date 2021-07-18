@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@android:drawable/star_on"
+        android:iconTint="@color/gray"
+        android:title="@string/watchlist"
+        tools:targetApi="o" />
+    <item
+        android:id="@+id/streamFragment"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:iconTint="@color/gray"
+        android:title="@string/stream"
+        tools:targetApi="o" />
+</menu>
