@@ -1,4 +1,4 @@
-package com.kutugondrong.cryptoonlinekg.data.remote.model
+package com.kutugondrong.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 

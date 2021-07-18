@@ -1,11 +1,11 @@
-package com.kutugondrong.cryptoonlinekg.data.local.dao
+package com.kutugondrong.data.local.dao
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.kutugondrong.cryptoonlinekg.data.local.entity.Crypto
+import com.kutugondrong.data.local.entity.Crypto
 import kotlinx.coroutines.flow.Flow
 
 @Dao

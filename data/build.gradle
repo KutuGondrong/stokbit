@@ -33,12 +33,43 @@ android {
 }
 
 dependencies {
+    implementation rootProject.kotlin_stdlib
+    implementation rootProject.core_ktx
+    implementation rootProject.appcompat
+    implementation rootProject.material
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    testImplementation 'junit:junit:4.+'
+    implementation rootProject.navigation_fragment_ktx
+    implementation rootProject.navigation_ui_ktx
+    implementation rootProject.legacy_support
+    implementation rootProject.recyclerview
+
+    implementation rootProject.coordinatorlayout
+
+    implementation rootProject.retrofit
+    implementation rootProject.converter_gson
+    implementation rootProject.okhttp
+    implementation rootProject.logging_interceptor
+
+    implementation rootProject.paging_runtime_ktx
+
+    implementation rootProject.glide
+
+    implementation rootProject.room_runtime
+    annotationProcessor rootProject.room_compiler
+    implementation rootProject.room_ktx
+
+    implementation rootProject.multidex
+
+    implementation rootProject.fragment_ktx
+
+
+    implementation rootProject.scarlet
+    implementation rootProject.stream_adapter_coroutines
+    implementation rootProject.websocket_okhttp
+    implementation rootProject.message_adapter_gson
+    implementation rootProject.lifecycle_android
+
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }

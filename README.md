@@ -1,10 +1,10 @@
-# omovie
+# Stockbit
 ===========================
 
-Movie Application Android
+Stockbit Sample Application Android
 -------------
 
 
-#Android Architecture: Hilt, MVVM, Kotlin Coroutines, Live Data, Room and Retrofit, Scarlet
+#Android Architecture: Hilt, MVVM, Kotlin Coroutines, Live Data, Room, Retrofit and Scarlet Web Socket
 
 #UI Testing Espresso

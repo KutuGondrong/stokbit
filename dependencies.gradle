@@ -6,4 +6,97 @@ ext {
     versionCode = 1
     versionName = "1.0.0"
     testInstrumentationRunner = "com.kutugondrong.cryptoonlinekg.HiltTestRunner"
+
+    kotlin_version = "1.5.0"
+    nav_version = "2.3.5"
+    hilt_version = '2.35.1'
+    hilt_androidx_version = '1.0.0-alpha03'
+    retrofit_version = '2.9.0'
+    paging_version = '3.1.0-alpha01'
+    glide_version = '4.11.0'
+    okhttp_version = '4.7.2'
+    roomVersion = '2.3.0'
+    fragment_version = "1.3.5"
+    test_version = "1.2.0"
+    mockito_version = "2.24.5"
+    espresso_version = "3.3.0"
+    scarlet_version = '0.1.9'
+    deps = [
+            kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            core_ktx = "androidx.core:core-ktx:$kotlin_version",
+            appcompat = 'androidx.appcompat:appcompat:1.3.0',
+            material = 'com.google.android.material:material:1.3.0',
+            constraintlayout = 'androidx.constraintlayout:constraintlayout:2.0.4',
+
+            navigation_fragment_ktx = "androidx.navigation:navigation-fragment-ktx:$nav_version",
+            navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:$nav_version",
+            legacy_support =  'androidx.legacy:legacy-support-v4:1.0.0',
+            recyclerview = 'androidx.recyclerview:recyclerview:1.2.1',
+
+            coordinatorlayout = 'androidx.coordinatorlayout:coordinatorlayout:1.1.0',
+
+            hilt_android = "com.google.dagger:hilt-android:$hilt_version",
+            android_compiler = "com.google.dagger:hilt-android-compiler:$hilt_version",
+            hilt_lifecycle_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_androidx_version",
+            hilt_compiler = "androidx.hilt:hilt-compiler:$hilt_androidx_version",
+
+            retrofit = "com.squareup.retrofit2:retrofit:$retrofit_version",
+            converter_gson = "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            okhttp = "com.squareup.okhttp3:okhttp:$okhttp_version",
+            logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$okhttp_version",
+
+            paging_runtime_ktx = "androidx.paging:paging-runtime-ktx:$paging_version",
+
+            glide = "com.github.bumptech.glide:glide:$glide_version",
+
+            room_runtime = "androidx.room:room-runtime:$roomVersion",
+            room_compiler = "androidx.room:room-compiler:$roomVersion",
+            room_ktx = "androidx.room:room-ktx:$roomVersion",
+            room_compiler = "androidx.room:room-compiler:$roomVersion",
+
+            multidex = 'androidx.multidex:multidex:2.0.1',
+
+            fragment_ktx = "androidx.fragment:fragment-ktx:$fragment_version",
+
+            scarlet = "com.tinder.scarlet:scarlet:$scarlet_version",
+            stream_adapter_coroutines = "com.tinder.scarlet:stream-adapter-coroutines:$scarlet_version",
+            websocket_okhttp = "com.tinder.scarlet:websocket-okhttp:$scarlet_version",
+            message_adapter_gson = "com.tinder.scarlet:message-adapter-gson:$scarlet_version",
+            lifecycle_android = "com.tinder.scarlet:lifecycle-android:$scarlet_version"
+
+
+//                room_testing = "androidx.room:room-testing:$roomVersion",
+//
+//                junit = 'junit:junit:4.13.2',
+//                ext_junit = 'androidx.test.ext:junit:1.1.2',
+//
+//                espresso_core = 'androidx.test.espresso:espresso-core:3.3.0',
+//                espresso_contrib = 'androidx.test.espresso:espresso-contrib:3.3.0',
+//                runner = 'androidx.test:runner:1.3.0',
+//                rules = 'androidx.test:rules:1.3.0',
+//
+//                // Testing fragment
+//                fragment_testing = "androidx.fragment:fragment-testing:$fragment_version",
+//
+//                hilt_android_compiler = "com.google.dagger:hilt-android-compiler:$hilt_version",
+//                kapt_hilt_android_compiler = "com.google.dagger:hilt-android-compiler:$hilt_version",
+//                hilt_android_testing = "com.google.dagger:hilt-android-testing:$hilt_version",
+//                hilt_android_testing_impl = "com.google.dagger:hilt-android-testing:$hilt_version",
+//
+//
+//                mockito_inline = 'org.mockito:mockito-inline:3.3.3',
+//                mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0",
+//                mockito_core = "org.mockito:mockito-core:3.3.3",
+//                mockito_android = 'org.mockito:mockito-android:2.24.5',
+//
+//                navigation_testing = "androidx.navigation:navigation-testing:$nav_version",
+//
+//                core_testing = "androidx.arch.core:core-testing:2.1.0",
+//                core_testing_impl = "androidx.arch.core:core-testing:2.1.0",
+//
+//                mockwebserver = "com.squareup.okhttp3:mockwebserver:4.6.0",
+//                idling_concurrent = 'com.android.support.test.espresso.idling:idling-concurrent:3.0.2',
+//                okhttp3_idling_resource = 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
+
+    ]
 }

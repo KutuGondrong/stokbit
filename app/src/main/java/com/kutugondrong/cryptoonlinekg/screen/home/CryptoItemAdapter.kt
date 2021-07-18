@@ -9,8 +9,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.kutugondrong.cryptoonlinekg.R
-import com.kutugondrong.cryptoonlinekg.data.local.entity.Crypto
 import com.kutugondrong.cryptoonlinekg.databinding.AdapterItemCryptoBinding
+import com.kutugondrong.data.local.entity.Crypto
 
 class CryptoItemAdapter(
     private val clicked: (Crypto) -> Unit

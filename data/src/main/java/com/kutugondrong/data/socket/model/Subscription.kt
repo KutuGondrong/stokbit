@@ -1,4 +1,4 @@
-package com.kutugondrong.cryptoonlinekg.data.socket.model
+package com.kutugondrong.data.socket.model
 
 import com.google.gson.annotations.SerializedName
 

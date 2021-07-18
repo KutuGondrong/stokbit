@@ -1,14 +1,13 @@
-package com.kutugondrong.cryptoonlinekg.data.local.db
+package com.kutugondrong.cryptoonlinekg.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.kutugondrong.cryptoonlinekg.data.local.dao.CryptoDao
-import com.kutugondrong.cryptoonlinekg.data.local.dao.RemoteKeysDao
-import com.kutugondrong.cryptoonlinekg.data.local.entity.Crypto
-import com.kutugondrong.cryptoonlinekg.data.local.entity.RemoteKeys
-
+import com.kutugondrong.data.local.dao.CryptoDao
+import com.kutugondrong.data.local.dao.RemoteKeysDao
+import com.kutugondrong.data.local.entity.Crypto
+import com.kutugondrong.data.local.entity.RemoteKeys
 
 @Database(
     entities = [Crypto::class, RemoteKeys::class],

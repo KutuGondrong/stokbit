@@ -1,8 +1,8 @@
 package com.kutugondrong.cryptoonlinekg.data.repository
 
-import com.kutugondrong.cryptoonlinekg.data.socket.CryptoSocket
-import com.kutugondrong.cryptoonlinekg.data.socket.model.Subscription
-import com.kutugondrong.cryptoonlinekg.data.socket.model.TickerResponse
+import com.kutugondrong.data.socket.CryptoSocket
+import com.kutugondrong.data.socket.model.Subscription
+import com.kutugondrong.data.socket.model.TickerResponse
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 import javax.inject.Singleton

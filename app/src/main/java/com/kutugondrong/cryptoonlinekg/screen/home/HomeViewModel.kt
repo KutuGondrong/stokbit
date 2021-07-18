@@ -4,8 +4,8 @@ import androidx.lifecycle.*
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.kutugondrong.cryptoonlinekg.data.local.entity.Crypto
 import com.kutugondrong.cryptoonlinekg.data.repository.CryptosRepository
+import com.kutugondrong.data.local.entity.Crypto
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject

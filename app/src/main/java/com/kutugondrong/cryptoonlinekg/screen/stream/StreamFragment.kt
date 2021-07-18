@@ -18,6 +18,9 @@ class StreamFragment : Fragment(R.layout.stream_fragment) {
         val binding = StreamFragmentBinding.bind(view)
 
         binding.apply {
+            txtName.text = "-----"
+            txtSymbol.text = "-----"
+            txtPrice.text = "------x"
             viewModel.subscribe{
                 it.fromSymbol?.apply {
                     txtName.text = this

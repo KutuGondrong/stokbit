@@ -1,4 +1,4 @@
-package com.kutugondrong.cryptoonlinekg.data.socket
+package com.kutugondrong.data.socket
 
 import com.tinder.scarlet.Stream
 import com.tinder.scarlet.StreamAdapter

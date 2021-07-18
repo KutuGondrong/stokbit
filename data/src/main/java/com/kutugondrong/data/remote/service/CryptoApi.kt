@@ -1,6 +1,6 @@
-package com.kutugondrong.cryptoonlinekg.data.remote.service
+package com.kutugondrong.data.remote.service
 
-import com.kutugondrong.cryptoonlinekg.data.remote.model.TopTierResponse
+import com.kutugondrong.data.remote.model.TopTierResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

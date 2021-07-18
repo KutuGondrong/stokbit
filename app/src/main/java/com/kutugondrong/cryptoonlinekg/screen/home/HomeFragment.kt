@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.kutugondrong.cryptoonlinekg.MainActivity
 import com.kutugondrong.cryptoonlinekg.R
-import com.kutugondrong.cryptoonlinekg.data.local.entity.Crypto
 import com.kutugondrong.cryptoonlinekg.databinding.HomeFragmentBinding
 import com.kutugondrong.cryptoonlinekg.utils.RecyclerViewItemDecoration
+import com.kutugondrong.data.local.entity.Crypto
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest

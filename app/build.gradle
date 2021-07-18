@@ -65,42 +65,52 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.core:core-ktx:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation rootProject.kotlin_stdlib
+    implementation rootProject.core_ktx
+    implementation rootProject.appcompat
+    implementation rootProject.material
+    implementation rootProject.constraintlayout
 
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation rootProject.navigation_fragment_ktx
+    implementation rootProject.navigation_ui_ktx
+    implementation rootProject.legacy_support
+    implementation rootProject.recyclerview
 
-    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation rootProject.coordinatorlayout
 
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_androidx_version"
-    kapt "androidx.hilt:hilt-compiler:$hilt_androidx_version"
+    implementation rootProject.hilt_android
+    kapt rootProject.android_compiler
+    implementation rootProject.hilt_lifecycle_viewmodel
+    kapt rootProject.hilt_compiler
 
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation rootProject.retrofit
+    implementation rootProject.converter_gson
+    implementation rootProject.okhttp
+    implementation rootProject.logging_interceptor
 
-    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+    implementation rootProject.paging_runtime_ktx
 
-    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation rootProject.glide
 
-    implementation "androidx.room:room-runtime:$roomVersion"
-    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    implementation rootProject.room_runtime
+    annotationProcessor rootProject.room_compiler
+    implementation rootProject.room_ktx
+    kapt rootProject.room_compiler
+
+    implementation rootProject.multidex
+
+    implementation rootProject.fragment_ktx
+
+
+    implementation rootProject.scarlet
+    implementation rootProject.stream_adapter_coroutines
+    implementation rootProject.websocket_okhttp
+    implementation rootProject.message_adapter_gson
+    implementation rootProject.lifecycle_android
+
+    implementation project(':data')
+
     androidTestImplementation "androidx.room:room-testing:$roomVersion"
-    implementation "androidx.room:room-ktx:$roomVersion"
-    kapt "androidx.room:room-compiler:$roomVersion"
-
-    implementation 'androidx.multidex:multidex:2.0.1'
-
-    implementation "androidx.fragment:fragment-ktx:$fragment_version"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -134,13 +144,6 @@ dependencies {
     implementation ('com.jakewharton.espresso:okhttp3-idling-resource:1.0.0') {
         exclude module: 'support-annotations'
     }
-
-
-    implementation "com.tinder.scarlet:scarlet:$scarlet_version"
-    implementation "com.tinder.scarlet:stream-adapter-coroutines:$scarlet_version"
-    implementation "com.tinder.scarlet:websocket-okhttp:$scarlet_version"
-    implementation "com.tinder.scarlet:message-adapter-gson:$scarlet_version"
-    implementation "com.tinder.scarlet:lifecycle-android:$scarlet_version"
 
 }
 

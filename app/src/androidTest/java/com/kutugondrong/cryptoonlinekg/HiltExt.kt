@@ -25,7 +25,6 @@ inline fun <reified T: Fragment> launchFragmentInHiltContainer(
     ).putExtra("androidx.fragment.app.testing.FragmentScenario.EmptyFragmentActivity.THEME_EXTRAS_BUNDLE_KEY", themeResId)
 
     ActivityScenario.launch<HiltTestActivity>(mainActivityIntent).onActivity { activity ->
-        activity?.actionBar?.hide()
         fragmentFactory?.let {
             activity.supportFragmentManager.fragmentFactory = it
         }

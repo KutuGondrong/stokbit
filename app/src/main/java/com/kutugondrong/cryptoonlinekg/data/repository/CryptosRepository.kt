@@ -1,10 +1,10 @@
 package com.kutugondrong.cryptoonlinekg.data.repository
 
 import androidx.paging.*
-import com.kutugondrong.cryptoonlinekg.data.local.db.AppDataBase
-import com.kutugondrong.cryptoonlinekg.data.local.entity.Crypto
-import com.kutugondrong.cryptoonlinekg.data.local.remotediator.CryptosRemoteMediator
-import com.kutugondrong.cryptoonlinekg.data.remote.service.CryptoApi
+import com.kutugondrong.cryptoonlinekg.data.db.AppDataBase
+import com.kutugondrong.data.local.entity.Crypto
+import com.kutugondrong.cryptoonlinekg.data.remotediator.CryptosRemoteMediator
+import com.kutugondrong.data.remote.service.CryptoApi
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 import javax.inject.Singleton
