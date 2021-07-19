@@ -1,5 +1,6 @@
 package com.kutugondrong.cryptoonlinekg.screen.home
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -34,7 +35,8 @@ class CryptoItemAdapter(
                 txtName.text = data.fullName
                 txtSymbol.text = data.name
                 txtPrice.text = data.price
-                itemView.setOnClickListener{
+                cardItemCrypto.setOnClickListener{
+                    Log.d("SASASASAS", "asdfsadfsadfsad")
                     clicked(data)
                 }
             }

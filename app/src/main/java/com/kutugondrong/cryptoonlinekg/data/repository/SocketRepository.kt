@@ -1,8 +1,10 @@
 package com.kutugondrong.cryptoonlinekg.data.repository
 
+import android.util.Log
 import com.kutugondrong.data.socket.CryptoSocket
 import com.kutugondrong.data.socket.model.Subscription
 import com.kutugondrong.data.socket.model.TickerResponse
+import com.tinder.scarlet.WebSocket
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -13,13 +15,14 @@ class SocketRepository @Inject constructor(
 ) {
 
     suspend fun observeCryptoSocket(update: (TickerResponse) -> Unit){
-        cryptoSocket.subscribe(Subscription(subs = emptyList()))
         cryptoSocket.observeResponse().collectLatest { response ->
             update(response)
         }
     }
 
-    fun subscribe() {
-        cryptoSocket.subscribe(Subscription(subs =  listOf("2~Coinbase~BTC~USD")))
+    suspend fun subscribe(listSubs : List<String>) {
+        cryptoSocket.observeWebSocketEvent().filter {it is WebSocket.Event.OnConnectionOpened<*>}.collectLatest {
+            cryptoSocket.subscribe(Subscription(subs = listSubs))
+        }
     }
 }

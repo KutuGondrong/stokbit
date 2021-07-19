@@ -20,8 +20,8 @@ class StreamFragment : Fragment(R.layout.stream_fragment) {
         binding.apply {
             txtName.text = "-----"
             txtSymbol.text = "-----"
-            txtPrice.text = "------x"
-            viewModel.subscribe{
+            txtPrice.text = "------"
+            viewModel.dataCrypto.observe(viewLifecycleOwner) {
                 it.fromSymbol?.apply {
                     txtName.text = this
                 }
@@ -32,6 +32,8 @@ class StreamFragment : Fragment(R.layout.stream_fragment) {
                     txtPrice.text = this
                 }
             }
+
+            viewModel.subscribe()
         }
 
 

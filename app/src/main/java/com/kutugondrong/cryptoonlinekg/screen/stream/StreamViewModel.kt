@@ -1,5 +1,7 @@
 package com.kutugondrong.cryptoonlinekg.screen.stream
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kutugondrong.cryptoonlinekg.data.repository.SocketRepository
@@ -13,12 +15,20 @@ class StreamViewModel @Inject constructor(
     private val repository: SocketRepository
 ) : ViewModel() {
 
+    private val dataInput = MutableLiveData<TickerResponse>()
+    val dataCrypto: LiveData<TickerResponse> = dataInput
 
-    fun subscribe(update: (TickerResponse) -> Unit) {
+    init {
         viewModelScope.launch {
-            repository.observeCryptoSocket{ data: TickerResponse -> update(data) }
+            repository.observeCryptoSocket{
+                dataInput.value = it
+            }
         }
-        repository.subscribe()
+    }
+    fun subscribe() {
+        viewModelScope.launch {
+            repository.subscribe(listOf("2~Coinbase~BTC~USD"))
+        }
     }
 
 }
