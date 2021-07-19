@@ -12,7 +12,6 @@ import com.kutugondrong.data.remote.service.CryptoApi
 import retrofit2.HttpException
 import java.io.IOException
 
-
 @ExperimentalPagingApi
 class CryptosRemoteMediator(
     private val service: CryptoApi,
@@ -26,10 +25,8 @@ class CryptosRemoteMediator(
             }
             LoadType.PREPEND -> {
                 return MediatorResult.Success(endOfPaginationReached = true)
-
             }
             LoadType.APPEND -> {
-
                 getKey()
             }
         }
