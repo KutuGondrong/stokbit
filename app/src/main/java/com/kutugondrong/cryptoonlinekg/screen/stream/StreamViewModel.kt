@@ -4,30 +4,42 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kutugondrong.cryptoonlinekg.data.repository.CryptosRepository
 import com.kutugondrong.cryptoonlinekg.data.repository.SocketRepository
 import com.kutugondrong.data.socket.model.TickerResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class StreamViewModel @Inject constructor(
-    private val repository: SocketRepository
+    private val repositorySocket: SocketRepository,
+    private val repositoryCrypto: CryptosRepository
 ) : ViewModel() {
 
     private val dataInput = MutableLiveData<TickerResponse>()
     val dataCrypto: LiveData<TickerResponse> = dataInput
 
+    private var cryptoJob: Job? = null
+
     init {
         viewModelScope.launch {
-            repository.observeCryptoSocket{
+            repositorySocket.observeCryptoSocket{
                 dataInput.value = it
             }
         }
     }
-    fun subscribe() {
+    fun subscribeFirst() {
         viewModelScope.launch {
-            repository.subscribe(listOf("2~Coinbase~BTC~USD"))
+            repositorySocket.subscribeFirst(listOf("2~Coinbase~BTC~USD"))
+        }
+    }
+
+    fun subscribe() {
+        cryptoJob?.cancel()
+        cryptoJob = viewModelScope.launch {
+            repositorySocket.subscribe(repositoryCrypto.getSymbolRandom())
         }
     }
 

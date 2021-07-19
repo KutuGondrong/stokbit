@@ -32,4 +32,7 @@ class CryptosRepository @Inject constructor(
         ).flow
     }
 
+    suspend fun getSymbolRandom(): List<String> {
+        return db.cryptoDao.getSymbolRandom()
+    }
 }

@@ -1,6 +1,7 @@
 package com.kutugondrong.cryptoonlinekg.data.repository
 
 import android.util.Log
+import androidx.lifecycle.lifecycleScope
 import com.kutugondrong.data.socket.CryptoSocket
 import com.kutugondrong.data.socket.model.Subscription
 import com.kutugondrong.data.socket.model.TickerResponse
@@ -20,9 +21,14 @@ class SocketRepository @Inject constructor(
         }
     }
 
-    suspend fun subscribe(listSubs : List<String>) {
-        cryptoSocket.observeWebSocketEvent().filter {it is WebSocket.Event.OnConnectionOpened<*>}.collectLatest {
+    suspend fun subscribeFirst(listSubs : List<String>) {
+        cryptoSocket.observeWebSocketEvent().filter {it is WebSocket.Event.OnConnectionOpened<*>}.collect {
             cryptoSocket.subscribe(Subscription(subs = listSubs))
         }
     }
+
+    fun subscribe(listSubs : List<String>) {
+        cryptoSocket.subscribe(Subscription(subs = listSubs))
+    }
+
 }

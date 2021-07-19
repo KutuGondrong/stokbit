@@ -22,8 +22,8 @@ interface CryptoDao {
     @Query("SELECT COUNT(id) from crypto")
     suspend fun count(): Int
 
-    @Query("SELECT DISTINCT symbol from crypto")
-    fun getSymbol(): Flow<List<String>>
+    @Query("SELECT symbol from crypto ORDER BY RANDOM() LIMIT 1")
+    suspend fun getSymbolRandom(): List<String>
 
     @Query("UPDATE crypto SET price=:price WHERE symbol = :symbols")
     suspend fun update(price: String, symbols: String)
