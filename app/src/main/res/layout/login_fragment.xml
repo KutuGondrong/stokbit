@@ -40,7 +40,7 @@
             app:layout_constraintTop_toBottomOf="@id/text_view_label_or">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_email"
+                android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -60,7 +60,7 @@
             app:layout_constraintTop_toBottomOf="@id/txt_input_email">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_password"
+                android:id="@+id/txtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"

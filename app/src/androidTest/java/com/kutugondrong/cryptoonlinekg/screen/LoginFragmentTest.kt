@@ -1,6 +1,11 @@
 package com.kutugondrong.cryptoonlinekg.screen
 
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.kutugondrong.cryptoonlinekg.R
 import com.kutugondrong.cryptoonlinekg.screen.login.LoginFragment
 import com.kutugondrong.cryptoonlinekg.launchFragmentInHiltContainer
 import dagger.hilt.android.testing.HiltAndroidRule
@@ -33,6 +38,13 @@ class LoginFragmentTest{
     @Test
     fun testVisibilityLoginFragment(){
         launchFragmentInHiltContainer<LoginFragment>(fragmentFactory = fragmentFactory)
+    }
+
+    @Test
+    fun testInputEmailPasswordLoginFragment(){
+        launchFragmentInHiltContainer<LoginFragment>(fragmentFactory = fragmentFactory)
+        onView(withId(R.id.txtEmail)).perform(typeText("kutugondrong@gmail.com"), ViewActions.closeSoftKeyboard())
+        onView(withId(R.id.txtPassword)).perform(typeText("kutugondrong@gmail.com"), ViewActions.closeSoftKeyboard())
     }
 
 

@@ -1,12 +1,14 @@
 package com.kutugondrong.cryptoonlinekg.helper
 
 import android.view.View
+import androidx.core.view.isGone
 import androidx.test.espresso.*
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import com.google.android.material.tabs.TabLayout
 import org.hamcrest.CoreMatchers
 import org.hamcrest.Matcher
+import org.hamcrest.Matchers.not
 import java.lang.reflect.Field
 
 fun selectTabAtPosition(tabIndex: Int): ViewAction {
@@ -30,15 +32,15 @@ fun selectTabAtPosition(tabIndex: Int): ViewAction {
     }
 }
 
-class ViewShownIdlingResource(private val viewMatcher: Matcher<View?>?, private val isAccessible: Boolean) :
+class ViewShownIdlingResource(private val viewMatcher: Matcher<View?>?, private val isAccessible: Boolean = true) :
     IdlingResource {
     private var resourceCallback: IdlingResource.ResourceCallback? = null
     override fun isIdleNow(): Boolean {
-        val view = getView(viewMatcher, isAccessible)
-        val idle = view == null || view.isShown
-        if (idle && resourceCallback != null && isAccessible) {
+        val view = getView(viewMatcher)
+        val idle =  view == null || (if (isAccessible) view.isShown else view.isGone )
+        if (idle && resourceCallback != null) {
             resourceCallback!!.onTransitionToIdle()
-        } else if (!idle && resourceCallback != null && !isAccessible) {
+        } else if (!idle && resourceCallback != null) {
             resourceCallback!!.onTransitionToIdle()
         }
         return idle
@@ -53,11 +55,11 @@ class ViewShownIdlingResource(private val viewMatcher: Matcher<View?>?, private 
     }
 
     companion object {
-        private fun getView(viewMatcher: Matcher<View?>?, isAccessible: Boolean): View? {
+        private fun getView(viewMatcher: Matcher<View?>?): View? {
             return try {
                 val viewInteraction = Espresso.onView(viewMatcher)
                 val finderField: Field = viewInteraction.javaClass.getDeclaredField("viewFinder")
-                finderField.isAccessible = isAccessible
+                finderField.isAccessible = true
                 val finder = finderField.get(viewInteraction) as ViewFinder
                 finder.view
             } catch (e: Exception) {
@@ -71,7 +73,11 @@ inline fun waitViewShown(matcher: Matcher<View?>?, isAccessible: Boolean = true)
     val idlingResource: IdlingResource = ViewShownIdlingResource(matcher, isAccessible) ///
     try {
         IdlingRegistry.getInstance().register(idlingResource)
-        Espresso.onView(matcher).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+        if (isAccessible) {
+            Espresso.onView(matcher).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
+        } else {
+            Espresso.onView(matcher).check(ViewAssertions.matches(not(ViewMatchers.isDisplayed())))
+        }
     } finally {
         IdlingRegistry.getInstance().unregister(idlingResource)
     }
